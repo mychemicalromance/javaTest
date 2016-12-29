@@ -27,7 +27,7 @@ public class Test {
 		Matcher m = p.matcher(s);
 		System.out.println(m.find());*/
 		
-		String line="Linux version 2.6.18-164.el5 (mockbuild@x86-002.build.bos.redhat.com) "
+		/*String line="Linux version 2.6.18-164.el5 (mockbuild@x86-002.build.bos.redhat.com) "
 				+ "(gcc version 4.1.2 20080704 (Red Hat 4.1.2-46)) #1 SMP Tue Aug 18 15:51:54 EDT 2009";
 		String line2="Linux version 3.10.0-327.el7.x86_64 (builder@kbuilder.dev.centos.org) "
 				+ "(gcc version 4.8.3 20140911 (Red Hat 4.8.3-9) (GCC) ) #1 SMP Thu Nov 19 22:10:57 UTC 2015";
@@ -36,7 +36,12 @@ public class Test {
 		Matcher m = p.matcher(line);
 		if(m.find()){
 			System.out.println("--"+m.group(1)+"--");
-		}
+		}*/
+		
+		Pattern p = Pattern.compile("^[-A-Z0-9a-z]+:[0-9]+$");
+		String s = "cloud-ui:8080";
+		Matcher m = p.matcher(s);
+		System.out.println(m.find());
 		
 	}
 }	
