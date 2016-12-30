@@ -37,11 +37,24 @@ public class Test {
 		if(m.find()){
 			System.out.println("--"+m.group(1)+"--");
 		}*/
+		process("^[-A-Z0-9a-z]+:[0-9]+$","cloud-ui:8080",0);
 		
-		Pattern p = Pattern.compile("^[-A-Z0-9a-z]+:[0-9]+$");
-		String s = "cloud-ui:8080";
-		Matcher m = p.matcher(s);
-		System.out.println(m.find());
-		
+	}
+	
+	private static void process(String regex,String testString,int groups){
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(testString);
+		if(m.find()){
+			System.out.println("matcher success!!!");
+			if(groups == 0){
+				System.out.println("\t"+m.group());
+			}else{
+				for(int i = 1;i<=groups;i++){
+					System.out.println("\\t"+m.group(i));
+				}
+			}
+		}else{
+			System.out.println("matcher failed...");
+		}
 	}
 }	
