@@ -15,9 +15,10 @@ public class Test {
 			f.delete();
 		}
 		f.createNewFile();
+		//不能new两个，不支持并发
 		System.setOut(new PrintStream(new FileOutputStream(f),true));
-		//System.setErr(System.out);
-		System.setErr(new PrintStream(new FileOutputStream(f),true));
+		System.setErr(System.out);
+		//System.setErr(new PrintStream(new FileOutputStream(f),true));
 		System.out.println("111111111111");
 		System.out.println("3333333333");
 		System.out.println("erer");
