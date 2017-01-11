@@ -44,6 +44,7 @@ public class Test {
 		String result = sb.toString();
 		//idea能打印出来emoji的字符，eclipse不能显示
 		//扩展平面的字符是由两个char组成
+		//mysql使用utf-8不能存储emoji
 		System.out.println(result);
 		for(char c:result.toCharArray()){
 			System.out.println(c);
