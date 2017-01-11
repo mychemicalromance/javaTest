@@ -42,6 +42,7 @@ public class Test {
 		sb.append(printEmoji("1F44D"));
 
 		String result = sb.toString();
+		//idea能打印出来emoji的字符，eclipse不能显示
 		System.out.println(result);
 		for(char c:result.toCharArray()){
 			System.out.println(c);
